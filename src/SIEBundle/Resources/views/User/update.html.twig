@@ -1,0 +1,50 @@
+{% extends 'jSIEBundle::main.html.twig' %}
+{% block title %}Detalle de {{user.nombre}}{% endblock %}
+{% block body %}
+<h1>Editar Usuario {{user.nombre}} </h1>
+	{{ form_start(form)}}
+	{{ form_errors(form) }}
+		<div id="al">
+			<article>
+			{{ form_label(form.nombre)}}
+			{{ form_errors(form.nombre)}}
+			{{ form_widget(form.nombre)}}
+		</article>
+		<article>
+			{{ form_label(form.apellidos)}}
+			{{ form_errors(form.apellidos)}}
+			{{ form_widget(form.apellidos)}}
+		</article>
+		<article>
+			{{ form_label(form.curp)}}
+			{{ form_errors(form.curp)}}
+			{{ form_widget(form.curp)}}
+		</article>
+		<article>
+			{{ form_label(form.edad)}}
+			{{ form_errors(form.edad)}}
+			{{ form_widget(form.edad)}}
+		</article>
+		<article>
+			{{ form_label(form.email)}}
+			{{ form_errors(form.email)}}
+			{{ form_widget(form.email)}}
+		</article>
+		<article>
+			{{ form_label(form.telefono)}}
+			{{ form_errors(form.telefono)}}
+			{{ form_widget(form.telefono)}}
+		</article>
+		<article>
+			{{ form_label(form.grupo)}}
+			{{ form_errors(form.grupo)}}
+			{{ form_widget(form.grupo)}}
+		</article>
+		<article>
+			<input type="submit" value="Guardar">
+		</article>
+		</div>
+	{{ form_row(form._token) }}
+	{{ form_rest(form) }}
+	{{ form_end(form) }}	
+{% endblock %}

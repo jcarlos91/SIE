@@ -1,0 +1,15 @@
+{% extends 'SIEBundle::main.html.twig' %}
+{% block title %}Detalle de {{user.nombre}}{% endblock %}
+{% block body %}
+	<h1>Detalles de {{user.nombre}} </h1>
+		<div id="al">
+			<label>Nombre: </label> <label>{{user.nombre}}</label><br>
+			<label>Apellidos: </label> <label>{{user.apellidos}}</label><br>
+			<label>CURP: </label> <label>{{user.curp}}</label><br>
+			<label>Email: </label> <label>{{user.email}}</label><br>
+			<label>Fecha de Alta: </label> <label>{{user.fechaAlta |date('d/m/Y')}}</label><br>
+			<label>Puesto: </label> <label>{{user.puesto.puesto}}</label>
+			
+		</div>
+		<input type="submit" value="Regresar" onclick="window.location='{{path('users')}}'">
+{% endblock %}

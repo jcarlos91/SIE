@@ -1,0 +1,45 @@
+{% extends 'SIEBundle::main.html.twig' %}
+{% block title %}Paso 1 de Registro{% endblock %}
+{% block body %}
+	<h1>Registro de Empleados</h1>
+	<section>
+		{{ form_start(form, {'action': path('empleados_new'), 'method': 'POST'}) }}
+		{{ form_errors(form) }}
+		<article>
+			{{form_label(form.nombre)}}
+			{{form_errors(form.nombre)}}
+			{{form_widget(form.nombre)}}
+		</article>
+		<article>
+			{{form_label(form.apellidoP)}}
+			{{form_errors(form.apellidoP)}}
+			{{form_widget(form.apellidoP)}}
+		</article>
+		<article>
+			{{form_label(form.apellidoM)}}
+			{{form_errors(form.apellidoM)}}
+			{{form_widget(form.apellidoM)}}
+		</article>
+		<article>
+			{{form_label(form.curp)}}
+			{{form_errors(form.curp)}}
+			{{form_widget(form.curp)}}
+		</article>
+		<article>
+			{{form_label(form.fechaNa)}}
+			{{form_errors(form.fechaNa)}}
+			{{form_widget(form.fechaNa)}}
+		</article>
+		<article>
+			{{form_label(form.puesto)}}
+			{{form_errors(form.puesto)}}
+			{{form_widget(form.puesto)}}
+		</article>
+		<article>
+			<input type="submit">
+		</article>
+		{{ form_row(form._token) }}
+		{{ form_rest(form) }}
+		{{ form_end(form) }}
+	</section>
+{% endblock %}

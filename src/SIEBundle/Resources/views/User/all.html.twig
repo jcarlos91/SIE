@@ -1,0 +1,31 @@
+{% extends 'SIEBundle::main.html.twig' %}
+{% block title %}Listado de usuarios {% endblock %}
+{% block body %}
+	<article>
+		<h1>Listado de Usuarios</h1>
+		<table class="header">
+			<tr><th>ID</th>
+				<th>Nombre</th>
+				<th>Apellidos</th>
+				<th>CURP</th>
+				<th>Fecha de Alta</th>
+				<th>Email</th>
+				<th>Puesto</th>
+				<th>Editar</th>
+				<th>Eliminar</th>
+			</tr>
+			{% for users in users %}
+				<tr>
+					<td><a href="{{url('user_detalle',{'id':users.id})}}">{{users.id}} </a></td>
+					<td><a href="{{url('user_detalle',{'id':users.id})}}">{{users.nombre}}</a></td>
+					<td><a href="{{url('user_detalle',{'id':users.id})}}">{{users.apellidos}}</a></td>
+					<td><a href="{{url('user_detalle',{'id':users.id})}}">{{users.CURP}}</a></td>
+					<td><a href="{{url('user_detalle',{'id':users.id})}}">{{users.fechaAlta |date("d/m/Y")}}</a></td>
+					<td><a href="{{url('user_detalle',{'id':users.id})}}">{{users.email}}</a></td>
+					<td><a href="{{url('user_detalle',{'id':users.id})}}">{{users.puesto.puesto}}</a></td>					
+				</tr>
+			{% endfor %}
+		</table>
+		<input type="submit" value="Nuevo" onclick="window.location='{{path('user_new')}}'">
+	</article>
+{% endblock %}

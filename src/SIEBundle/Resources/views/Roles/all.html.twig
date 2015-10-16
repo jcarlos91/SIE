@@ -1,0 +1,23 @@
+{% extends 'SIEBundle::main.html.twig' %}
+{% block title %}Catalogo de Roles{% endblock %}
+{% block body %} 
+<article>
+	<h1>Listado de Roles</h1>
+	<table class="header">
+		<tr><th>ID</th>
+			<th>Rol</th>
+			<th>Editar</th>
+			<th>Eliminar</th>
+		</tr>
+		{% for roles in roles %}
+			<tr>
+				<td>{{roles.id}} </a></td>
+				<td>{{roles.role}}</a></td>
+				<td><a href="{{url('rol_edit',{'id':roles.id})}}">Editar</a></td>
+				<td><a href="{{url('rol_delete',{'id':roles.id})}}">Eliminar</a></td>					
+			</tr>
+		{% endfor %}
+	</table>
+	<input type="submit" value="Nuevo" onclick="window.location='{{path('roles_new')}}'">
+</article>
+{% endblock %}

@@ -1,0 +1,43 @@
+login:
+    path:    /login
+    defaults: { _controller: SIEBundle:Security:login }
+login_check:
+    pattern:   /login_check
+logout:
+    path:    /logout
+
+sie_homepage:
+    path:     /index
+    defaults: { _controller: SIEBundle:Default:index }
+#Catalogos
+roles:
+    path:    /roles
+    defaults: { _controller:SIEBundle:Role:all }
+roles_new:
+    path:    /roles/nuevo
+    defaults: { _controller: SIEBundle:Role:nuevo  }
+rol_edit:
+    path:    /roles/{id}/editar
+    defaults: { _controller: SIEBundle:Role:edit }
+rol_delete:
+    path:    /rol/{id}/eliminar
+    defaults: { _controller: SIEBundle:Role:delete }
+puesto_nuevo:
+    path:    /puesto/nuevo
+    defaults: { _controller: SIEBundle:puesto:nuevo}
+#Usuarios
+user_new:
+    path:    /user/{id}/nuevo
+    defaults: { _controller: SIEBundle:User:nuevo }
+users:
+    path:    /users
+    defaults: { _controller: SIEBundle:User:users }
+user_detalle:
+    path:    /user/{id}/detalle
+    defaults: { _controller:SIEBundle:User:user }
+user_edit:
+    path:     /user/{id}/update
+    defaults: { _controller: SIEBundle:User:update }
+empleados_new:
+    path:    /empleado/nuevo
+    defaults: { _controller: SIEBundle:Empleado:nuevo }

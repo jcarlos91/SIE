@@ -1,0 +1,41 @@
+{% extends 'SIEBundle::main.html.twig' %}
+{% block title %}Inicio{% endblock %}
+{% block body %}
+	<div id="header">
+    <ul class="nav">
+            <li><a href="">Inicio</a></li>
+            <li><a href="">Empleados</a>
+                    <ul>
+                            <li><a href="{{url('empleados_new')}}">Alta</a></li>
+                            <li><a href="">Tratamiento</a>
+                                <ul>
+                                    <li><a href="#">Nuevo</a></li>
+                                    <li><a href="">Submenu2</a></li>
+                                    <li><a href="">Submenu3</a></li>
+                                    <li><a href="">Submenu4</a></li>
+                                </ul>
+                            </li>
+                            <!--li><a href="">Submenu4</a>
+                                    
+                            </li-->
+                            <!--li><a href="">Submenu3</a></li-->
+                            
+                    </ul>
+            </li>
+            <li><a href="">Empleados</a>
+                <ul>
+                    <li><a href="">Nuevo</a></li>
+                </ul>
+            </li>
+            <li><a href="">Catalogos</a>
+                    <ul>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li>
+                    </ul>
+            </li>
+            <li><a href="{{url('logout')}}">Cerrar Sesión</a></li>
+    </ul>
+</div>
+{% endblock %}

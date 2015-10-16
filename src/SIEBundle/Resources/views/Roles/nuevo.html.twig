@@ -1,0 +1,20 @@
+{% extends 'SIEBundle::main.html.twig' %}
+
+{% block body %}
+	<section>
+		{{ form_start(form) }}
+		{{ form_errors(form) }}
+		<article>
+			{{form_label(form.role)}}
+			{{form_errors(form.role)}}
+			{{form_widget(form.role)}}
+		</article>
+		<article>
+			<input type="submit">
+		</article>
+		{{ form_row(form._token) }}
+		{{ form_rest(form) }}
+		{{ form_end(form) }}
+
+	</section>
+{%  endblock %}
